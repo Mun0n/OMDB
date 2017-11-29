@@ -1,13 +1,17 @@
-package com.mun0n.omdb;
+package com.mun0n.omdb.presentation.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.mun0n.omdb.R;
+
+public class MoviesActivity extends BaseActivity {
+    
+    //TODO: 95115d4f
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
     }
 }

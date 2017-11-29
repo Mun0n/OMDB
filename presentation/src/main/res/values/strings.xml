@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OMDB</string>
+    <string name="bt_retry">Retry</string>
 </resources>
