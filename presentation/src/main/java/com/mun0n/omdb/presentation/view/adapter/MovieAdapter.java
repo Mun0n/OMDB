@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.mun0n.omdb.R;
 import com.mun0n.omdb.presentation.model.MovieModel;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,6 +41,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     @Override
     public int getItemCount() {
         return moviesCollection.size();
+    }
+    
+    public void setMoviesCollection(final Collection<MovieModel> movieModelCollection) {
+        validateMoviesCollection(movieModelCollection);
+        moviesCollection = (List<MovieModel>) movieModelCollection;
+        notifyDataSetChanged();
+    }
+    
+    private void validateMoviesCollection(final Collection<MovieModel> movieModelCollection) {
+        if (movieModelCollection == null) {
+            throw new IllegalArgumentException("The list cannot be null");
+        }
     }
     
     public class MovieViewHolder extends RecyclerView.ViewHolder {
