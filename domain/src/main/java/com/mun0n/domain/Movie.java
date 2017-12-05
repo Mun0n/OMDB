@@ -2,8 +2,13 @@ package com.mun0n.domain;
 
 public class Movie {
     
+    private long id;
     private String name;
     private String coverUrl;
+    
+    public Movie(final long id) {
+        this.id = id;
+    }
     
     public String getName() {
         return name;

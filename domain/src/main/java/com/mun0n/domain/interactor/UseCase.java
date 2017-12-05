@@ -5,6 +5,7 @@ import com.mun0n.domain.executor.ThreadExecutor;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -31,6 +32,15 @@ public abstract class UseCase<T, Params> {
         }
     }
     
-    private void addDisposable(final DisposableObserver<T> observer) {
+    public void dispose() {
+        if (!disposables.isDisposed()) {
+            disposables.dispose();
+        }
+    }
+    
+    private void addDisposable(final Disposable disposable) {
+        if (disposable != null && disposables != null) {
+            disposables.add(disposable);
+        }
     }
 }
